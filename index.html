@@ -7,31 +7,83 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
     <script src="/js/myscript.js"></script>
-    <title>Hunger</title>
+    <title>Web_Site_Ann</title>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header__body">
-          <nav class="nav">
-            <a class="nav__link active" href="">Home</a>
-            <a class="nav__link" href="#about">About</a>
-            <a class="nav__link" href="#team">Team</a>
-            <a class="nav__link" href="#booking">Booking</a>
-          </nav>
-
           <div class="header__logo">
-            <img src="img/Vector.png" alt="Логотип" />
+            <img src="img/logo.png" alt="Логотип" />
           </div>
 
           <nav class="nav">
-            <a class="nav__link active" href="#menu">Menu</a>
-            <a class="nav__link" href="#galerie">Galerie</a>
-            <a class="nav__link" href="#events">Events</a>
-            <a class="nav__link" href="#contact">Contact</a>
+            <a class="nav__link" href="#menu">Главная</a>
+            <a class="nav__link" href="#galerie">Обо мне</a>
+            <a class="nav__link" href="#events">Прайс-лист</a>
+            <a class="nav__link" href="#contact">Контакты</a>
           </nav>
         </div>
       </div>
     </header>
+
+    <section class="section" id="about">
+      <div class="section_body">
+        <!-- Контейнер слайд-шоу -->
+        <div class="slideshow-container">
+          <!-- Полноразмерные изображения с числом и текстом подписи -->
+          <div class="mySlides fade">
+            <img src="/img/slaid.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="/img/slaid2.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="/img/back_photo.jpg" style="width: 100%" />
+          </div>
+
+          <!-- Вперед и назад кнопки -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Вперед/назад элементы управления
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      // Элементы управления миниатюрами изображений
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
   </body>
 </html>

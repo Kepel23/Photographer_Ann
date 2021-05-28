@@ -30,23 +30,24 @@ h6 {
 }
 
 @font-face {
-  font-family: Banny; /* Гарнитура шрифта */
-  src: url(fonts/Banny-Round.otf); /* Путь к файлу со шрифтом */
+  font-family: Rosalinda Regular; /* Гарнитура шрифта */
+  src: url(/fonts/11391.ttf); /* Путь к файлу со шрифтом */
 }
+
+/*////////////////////////// */
+/*////////////////////////// */
+
+/* HEADER */
 
 .header {
   width: 100%;
 
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-}
-
-.header__content {
-  height: 72px;
-  margin: auto;
+  background-color: #e2d6d6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -57,7 +58,7 @@ h6 {
 
 .header__body {
   display: flex;
-  height: 72px;
+  height: 150px;
   justify-content: space-between;
   text-align: center;
   align-items: center;
@@ -66,32 +67,36 @@ h6 {
 .header__logo {
   width: 150px;
   height: 150px;
-  padding-top: 25px;
-  margin: auto 0;
+  padding-top: 15px;
+}
+
+.header__logo img {
+  width: 130px;
+  height: 130px;
 }
 
 .nav {
   text-transform: uppercase;
-  font-family: OpenSans;
+  font-family: Rosalinda Regular;
   margin: auto 0;
   font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: normal;
+  font-size: 14px;
   line-height: 18px;
-  color: white;
+
   list-style-type: none;
-  border-bottom-width: 1px; /* Толщина линии внизу */
-  border-bottom-style: solid; /* Стиль линии внизу */
-  border-bottom-color: rgba(255, 255, 255, 0.2); /* Цвет линии внизу */
 }
 
 .nav__link {
   display: inline-block;
-  padding: 40px;
+  padding: 10px;
+  margin: 50px 60px 30px 60px;
   vertical-align: top;
   position: relative;
-  color: #fff;
+  color: #8d5256;
   text-decoration: none;
+
+  font-family: Rosalinda Regular;
 
   transition: color 0.1s linear;
 }
@@ -102,7 +107,7 @@ h6 {
   width: 100%;
   height: 3px;
 
-  background-color: #fce38a;
+  background-color: rgb(75, 71, 71);
   opacity: 0;
 
   position: absolute;
@@ -114,9 +119,97 @@ h6 {
 }
 
 .nav__link:hover {
-  color: #fce38a;
+  color: black;
 }
 
 .nav__link:hover:after {
   opacity: 1;
+}
+
+/*////////////////////////// */
+/*////////////////////////// */
+
+/* SlAID SHOW */
+
+.section {
+  height: 800px;
+
+  margin: 0px;
+}
+
+.section_body {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+}
+
+/*////////////////////////// */
+/*////////////////////////// */
+
+/* Контейнер слайд-шоу */
+.slideshow-container {
+  height: 100vh;
+  position: relative;
+  margin: auto;
+}
+
+/* Скрыть изображения по умолчанию */
+.mySlides img {
+  height: 800px;
+}
+
+/* Вперед иназад кнопки */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #8d5256;
+  font-weight: bold;
+  font-size: 32px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Положение "next кнопки" справа */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* При наведении курсора добавьте черный цвет фона с немного прозрачным */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Исчезающая анимация */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
