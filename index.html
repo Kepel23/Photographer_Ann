@@ -1,89 +1,137 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
-    <script src="/js/myscript.js"></script>
+    <link
+      href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="/bootstrap-5.0.1-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
     <title>Web_Site_Ann</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__body">
-          <div class="header__logo">
-            <img src="img/logo.png" alt="Логотип" />
+      <!--
+              <header>
+      <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+          <div class="container-fluid">
+            <div class="header_bottom_border">
+              <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-2">
+                  <div class="logo">
+                    <a href="index.html">
+                      <img src="img/Logotip.jpg" alt="" />
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a class="active" href="">home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">tracks</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">pages</a></li>
+                        <li><a href="">Contact</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                  <div class="social_icon text-right">
+                    <ul>
+                      <li>
+                        <a href="#"
+                          ><i class="fa fa-facebook" aria-hidden="true"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                      </li>
+                      <li>
+                        <a href="#"> <i class="fa fa-instagram"></i> </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <nav class="nav">
-            <a class="nav__link" href="#menu">Главная</a>
-            <a class="nav__link" href="#galerie">Обо мне</a>
-            <a class="nav__link" href="#events">Прайс-лист</a>
-            <a class="nav__link" href="#contact">Контакты</a>
-          </nav>
         </div>
       </div>
     </header>
+      -->
 
-    <section class="section" id="about">
-      <div class="section_body">
-        <!-- Контейнер слайд-шоу -->
-        <div class="slideshow-container">
-          <!-- Полноразмерные изображения с числом и текстом подписи -->
-          <div class="mySlides fade">
-            <img src="/img/slaid.jpg" style="width: 100%" />
-          </div>
 
-          <div class="mySlides fade">
-            <img src="/img/slaid2.jpg" style="width: 100%" />
-          </div>
+    <!-- slider_area_end -->
 
-          <div class="mySlides fade">
-            <img src="/img/back_photo.jpg" style="width: 100%" />
-          </div>
-
-          <!-- Вперед и назад кнопки -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div
+      id="carouselExampleSlidesOnly"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="img/slaid.jpg" alt="First slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/slaid2.jpg" alt="Second slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/slaid.jpg" alt="Third slide" />
         </div>
       </div>
-    </section>
+    </div>
 
-    <script>
-      var slideIndex = 1;
-      showSlides(slideIndex);
+    <div class="col-lg-8">
+        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                
+                  <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder = 'Enter Message'></textarea>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Enter your name'>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder = 'Enter email address'>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject'>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="button button-contactForm btn_4 boxed-btn">Send Message</button>
+          </div>
+        </form>
+      </div>
 
-      // Вперед/назад элементы управления
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      // Элементы управления миниатюрами изображений
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-      }
-    </script>
+  <script src="/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/bootstrap-5.0.1-dist/js/bootstrap.js"></script>
+  <script src="/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
